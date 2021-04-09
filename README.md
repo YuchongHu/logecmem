@@ -45,9 +45,9 @@ Users use source code to install libmemcached in the proxy.
 	$ sh configure; make; sudo make install
 	$ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH  #(if it ocuurs library path issue)
 
-Users can setup passwardless SSH login, and use `*SSH root@node bash cls.sh"` to re-set memcached instances in the proxy.
+Users can setup passwardless SSH login, and use `SSH root@node bash cls.sh` to re-set memcached instances in the proxy.
 
-User use g++ to complie update.cpp and repair.cpp. 
+User use g++ to compile update.cpp and repair.cpp. 
 	
 	$ bash make.sh
 
@@ -58,13 +58,15 @@ User can use the provided workloads (`ycsb_set.txt` and `ycsb_test.txt`) in each
 Benchmarks
 ====
 
-1.**Update and Memory overhead**, users can confiure *N, K, worklod dir, and server IP* parameters, and gain all three In-palace, Full-stripe and LogECMem results. **"./update [1|2|3] dir N K IP > /dev/null"**, 1|2|3 indicates In-place|Full-stripe|LogECMem respectively, *N* indiactes the number of all data and parity chunks, *K* indiactes the number of all data chunks, *dir* indicates the path of workloads and *IP* indicates the DRAM node's IP. Note that users can configue more IPs and Ports in update.cpp and run.sh for distributed setup.
+1.**Update latency and Memory overhead**
+Users can configure *N, K, workload dir, and server IP* parameters, and gain all three In-palace, Full-stripe and LogECMem results. **"./update [1|2|3] dir N K IP > /dev/null"**, 1|2|3 indicates In-place|Full-stripe|LogECMem respectively, *N* indicates the number of all data and parity chunks, *K* indicates the number of all data chunks, *dir* indicates the path of workloads and *IP* indicates the DRAM node's IP. Note that users can configure more IPs and Ports in update.cpp and run.sh for distributed setup.
 
 	
 	$ cd update
 	$ bash run.sh
 
-2.**Multiple chunks failures**, users can confiure *N, K, worklod dir and server IP* parameters, and gain all schemes' repair performance. **"./repair dir N K > /dev/null"**, *N* indiactes the number of all data and parity chunks, *K* indiactes the number of all data chunks, *dir* indicates the path of workloads and *IP* indicates the DRAM node's IP. Note that users can configue more in repair.cpp and run.sh for distributed setup.
+2.**Multiple chunks failures performance**
+Users can configure *N, K, workload dir and server IP* parameters, and gain all schemes' repair performance. **"./repair dir N K > /dev/null"**, *N* indicates the number of all data and parity chunks, *K* indicates the number of all data chunks, *dir* indicates the path of workloads and *IP* indicates the DRAM node's IP. Note that users can configure more in repair.cpp and run.sh for distributed setup.
 
 
 	$ cd repair
