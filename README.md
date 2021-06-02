@@ -9,14 +9,15 @@ Preparation
  
 These are the required libraries that users need to download separately.
 
- - make & automake-1.14
- - yasm & nasm
- - libtool
- - boost libraries (libboost-all-dev)
- - libevent (libevent-dev)
+ - gcc (v5.18.7), g++ (v5.4.0)
+ - make (v4.1), cmake (v3.5.1), autogen (v5.18.7), autoconf (v2.69), automake (v1.14), 
+ - yasm (v1.3.0), nasm (v2.11)
+ - libtool (v2.4.6)
+ - boost libraries (libboost-all-dev) (v1.58)
+ - libevent (libevent-dev) (v2.0.21)
 `$ sudo apt-get install gcc g++ make cmake autogen autoconf automake yasm nasm libtool libboost-all-dev libevent-dev`
 
-Users can install the following library manually: *Intel®-storage-acceleration-library (ISA-l)*.
+Users can install the following library manually: *Intel®-storage-acceleration-library (ISA-l) (v2.14.0)*.
 
     $ tar -zxvf isa-l-2.14.0.tar.gz
     $ cd isa-l-2.14.0
@@ -27,7 +28,7 @@ Users can install the following library manually: *Intel®-storage-acceleration-
 LogECMem Installation
 ====
 
-**Memcached Servers**
+**Memcached Servers (v1.4.25)**
 
 Users can use apt-get to install Memcached instances in servers.
 
@@ -39,7 +40,7 @@ For distributed setup, users can use multiple nodes with different IPs to run me
 
 **LogECMem Proxy**
 
-Users use source code to install libmemcached in the proxy.
+Users use source code to install libmemcached (extented from v1.0.18) in the proxy.
 
 	$ cd libmemcached-1.0.18
 	$ sh configure; make; sudo make install
@@ -53,7 +54,7 @@ User use g++ to compile update.cpp and repair.cpp.
 
 **Workloads**
 
-User can use the provided workloads (`ycsb_set.txt` and `ycsb_test.txt`) in each directory to do demo tests, and further more workloads via YCSB with *basic* parameter in *https://github.com/brianfrankcooper/YCSB/wiki/Running-a-Workload*.
+Users can use the provided workloads (`ycsb_set.txt` and `ycsb_test.txt`) in each directory to do demo tests, and further more workloads via YCSB with *basic* parameter in *https://github.com/brianfrankcooper/YCSB/wiki/Running-a-Workload*.
 
 Benchmarks
 ====
